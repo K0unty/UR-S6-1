@@ -1,4 +1,5 @@
 import logo from "../assets/lo.gif";
+import "./Header.css";
 
 export default function Header() {
   return (
