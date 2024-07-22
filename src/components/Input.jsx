@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import styled from "styled-components";
 
 // const Label = styled.label`
@@ -22,6 +23,14 @@
 // `;
 
 export default function Input({ label, invalid, ...props }) {
+  let labelClasses =
+    "block mb-2 text-xs tracking-wide text-stone-200 uppercase";
+
+  if (invalid) {
+    labelCases =
+      "block mb-2 text-xs tracking-wide text-stone-200 uppercase text-red-400";
+  }
+
   return (
     <p>
       <label className="block mb-2 text-xs tracking-wide text-stone-200 uppercase">
