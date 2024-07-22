@@ -1,14 +1,61 @@
+import { styled } from "styled-components";
+
 import logo from "../assets/lo.gif";
-import classes from "./Header.module.css";
+// import classes from "./Header.module.css";
+
+const StyledHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  & img {
+    object-fit: contain;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    width: 11rem;
+    height: 11rem;
+    transition: transform 1.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  & img:hover {
+    transform: scale(2);
+  }
+  & h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #9a3412;
+    font-family: "Pacifico", cursive;
+    margin: 0;
+  }
+
+  & p {
+    text-align: center;
+    color: #a39191;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 4rem;
+
+    & h1 {
+      font-size: 2.25rem;
+    }
+  }
+`;
 
 export default function Header() {
   return (
-    <header>
+    <StyledHeader>
       <img src={logo} alt="A canvas" />
       <h1>ReactPanty</h1>
-      <p className={classes.paragraph}>
-        A community of artists and art-lovers.
-      </p>
-    </header>
+      <p>A community of artists and art-lovers.</p>
+    </StyledHeader>
   );
 }
